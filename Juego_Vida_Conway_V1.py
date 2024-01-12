@@ -1,24 +1,20 @@
 # coding: utf-8
 
-"""Juego de la vida de Conway.
-
-Autor: Eduard Bantulà Gutiérrez
-
-El tablero es un array de NumPy, donde 0 significa célula muerta y 1 célula
-viva. Se muestra una animación con matplotlib.
-
-"""
+# """
+# Juego de la vida de Conway.
+# Autor: Eduard Bantulà Gutiérrez
+# El tablero es un array de NumPy, donde 0 significa célula muerta y 1 célula viva. Se muestra una animación con matplotlib.
+# """
 
 from time import sleep
-
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.cm as cm
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import matplotlib.cm as cm
 from matplotlib import animation
 
 
 def vecindario(b):
-    """Array de células vivas en el vecindario."""
+#   """Array de células vivas en el vecindario."""
     vecindario = (
         np.roll(np.roll(b, 1, 1), 1, 0) +  # Abajo-derecha
         np.roll(b, 1, 0) +  # Abajo
@@ -33,7 +29,7 @@ def vecindario(b):
 
 
 def paso(b):
-    """Paso en el juego de la vida de Conway."""
+#   """Paso en el juego de la vida de Conway."""
     v = vecindario(b)
     buffer_b = b.copy()  # Hacemos una copia de la matriz
     for i in range(buffer_b.shape[0]):
